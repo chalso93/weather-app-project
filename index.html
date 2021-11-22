@@ -14,12 +14,126 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+        <script src="https://kit.fontawesome.com/b54807b683.js" crossorigin="anonymous"></script>
     <title>Weather App</title>
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <h1>testing</h1>
-    <a href="" class="btn btn-primary">Click me</a>
+ <img src = "img/weather-app-bground.jpg" class="bground-image" style="width:100%">
+
+    <div class="app">
+
+
+<div class="container">   
+        <div class="weather">
+          <div class="weatherSearch">
+            <form class="search">
+              <div class="row">
+                <div class="col-5">
+                  <input
+                    type="search"
+                    placeholder="Enter a city..."
+                    class="form-control search-input"
+                  />
+                </div>
+                <div class="col-2">
+                  <input
+                    type="submit"
+                    class="btn btn-primary w-100 searchButton"
+                    value="Search"
+                    id="search-location-btn"
+                  />
+                </div>
+                <div class="col-3">
+                  <input
+                    type="button"
+                    class="btn btn-primary currentLocation"
+                    value="Current Location"
+                    id="current-location-btn"
+                  />
+                </div>
+              </div>
+            </form>
+          </div>
+          <section class="todayDate">
+            <div class="row searchLocation" id="location">
+              <div class="col"><h1>Brisbane</h1></div>
+            </div>
+          <div class="row">
+            <div class="col-1">
+            <h1 class="date">30</h1>
+            </div>
+            <div class="col monthDay">
+            <h2 class="month">November</h2><br/>
+            <h3 class="day">Monday</h3>
+          </div>
+
+          </section>
+          <main class = "weatherdata"> 
+
+            <p id = "temp" class="temp">32</p><span class="units"><a id="unitCel" href="#">°C</a> | <a id="unitFar" href="#">°F</a></span>
+         
+
+            <ul class = "data">
+              <li class="mintemp">22° <span class = "min">min</span></li>
+              <li class="weathericon"><i class="fas fa-cloud-rain"></i></li>
+              <li class="maxtemp">28° <span class = "max">max</span></li>
+            </ul>
+ <ul class="datalist">
+<li id = "temp-description" class = temperatureDescription>20% chance of storms</li>
+<li>Wind: 1km/h</li>
+<li>Humidity: 90%</li>
+</ul>
+          </main>
+          <div class = "forecasts">
+            <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Sun</h5>
+    <h6 class="card-subtitle mb-2 text-muted">27°</h6>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Mon</h5>
+    <h6 class="card-subtitle mb-2 text-muted">30°</h6>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Tues</h5>
+    <h6 class="card-subtitle mb-2 text-muted">27°</h6>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Wed</h5>
+    <h6 class="card-subtitle mb-2 text-muted">30°</h6>
+  </div>
+</div>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Thu</h5>
+    <h6 class="card-subtitle mb-2 text-muted">27°</h6>
+  </div>
+          </div>
+        </div>
+
+      </div>
+              <footer>
+          <span class = "codedetail" class = "codedetail">Coded by
+          <a class = "codedetaillink" href="https://www.linkedin.com/in/sophie-challinor/"
+            >Sophie Challinor</a
+          >
+          using HTML, CSS and JS.
+          <a class = "codedetaillink" href="https://github.com/chalso93/weather-app-project"
+            >Open-sourced on GitHub</a
+          >
+          | Hosted on <a class = "codedetaillink" href="https://www.netlify.com/">Netlify</a></span>
+        </footer>
+    </div>
+
+
+
     <script src="src/app.js"></script>
   </body>
 </html>

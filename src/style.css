@@ -1,3 +1,160 @@
-h1 {
-  color: red;
+img {
+  position: absolute;
+  margin: -40px auto;
+  opacity: 0.8;
+}
+.app {
+  position: relative;
+}
+
+.container {
+  margin: 40px auto;
+  border: solid black;
+  min-width: 1000px;
+  max-width: 1100px;
+  height: 620px;
+  padding: 15px;
+  border-radius: 20px;
+  opacity: 0.8;
+  background: #282a36;
+}
+
+.weather {
+  display: block;
+  margin: 0 auto;
+  border-bottom-style: solid;
+
+  border-bottom-width: 0.5px;
+  padding: 10px;
+  padding-bottom: 25px;
+  color: #eceff1;
+}
+
+.search {
+  padding-left: 250px;
+  padding-bottom: 30px;
+  border-bottom-style: solid;
+  color: #878787;
+  border-bottom-width: 0.5px;
+}
+.search-input:hover {
+  background: #cfd8dc;
+  color: #31434d;
+  border-color: #31434d;
+  border-width: 1px;
+}
+
+.searchButton,
+.currentLocation {
+  background-color: #546e7a;
+  border-color: #31434d;
+}
+
+.searchButton:hover,
+.currentLocation:hover {
+  background: #90a4ae;
+  color: #31434d;
+  border-color: #31434d;
+}
+
+.col-3 {
+  padding-left: 1px;
+}
+
+.searchLocation {
+  padding-bottom: 5px;
+}
+
+.todayDate {
+  padding-left: 40px;
+  padding-top: 20px;
+}
+
+.monthDay {
+  padding-left: 20px;
+  margin-top: 25px;
+}
+
+.date,
+.month,
+.day {
+  display: inline;
+}
+
+.date {
+  font-size: 80px;
+}
+
+.month {
+  font-size: 25px;
+}
+.day {
+  font-size: 20px;
+}
+
+.weatherdata {
+  text-align: center;
+
+  margin: -190px auto;
+}
+
+.temp {
+  font-size: 70px;
+  display: inline;
+  padding-left: 40px;
+}
+.units {
+  position: relative;
+  top: -35px;
+}
+
+ul {
+  list-style-type: none;
+  margin: auto;
+}
+
+.mintemp,
+.maxtemp,
+.weathericon {
+  display: inline;
+}
+.weathericon {
+  text-align: center;
+  font-size: 70px;
+}
+
+.mintemp,
+.maxtemp {
+  font-size: 30px;
+  padding: 40px;
+}
+.min,
+.max {
+  font-size: 15px;
+}
+.temperatureDescription {
+  text-transform: capitalize;
+  padding-top: 25px;
+}
+
+.forecasts {
+  margin-top: 250px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.card {
+  display: inline-block;
+  max-width: 190px;
+  color: #37474f;
+}
+
+.codedetail,
+.codedetaillink {
+  font-size: 15px;
+  color: #cfd8dc;
+}
+
+.codedetaillink:hover {
+  font-weight: bold;
+  color: #78909c;
 }
