@@ -12,7 +12,7 @@
   border: solid #4469819f;
   min-width: 1000px;
   max-width: 1100px;
-  height: 620px;
+  height: 629px;
   padding: 30px;
   border-radius: 20px;
   opacity: 1;
@@ -145,8 +145,10 @@ ul {
   margin-left: -65px;
   font-style: italic;
 }
-.temperatureDescription {
+.temperatureDescription::first-letter {
   text-transform: capitalize;
+}
+.temperatureDescription {
   padding-top: 10px;
 }
 
@@ -166,6 +168,19 @@ ul {
   color: #37474f;
 }
 
+h6 {
+  padding-top: 10px;
+}
+
+#forecastMax {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+#forecastMin {
+  font-size: 16px;
+  opacity: 0.8;
+}
 .codedetail,
 .codedetaillink {
   font-size: 15px;
