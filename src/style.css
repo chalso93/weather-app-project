@@ -112,6 +112,10 @@
   cursor: default;
 }
 
+.weatherdata .notActive {
+  color: #ff6f00;
+}
+
 ul {
   list-style-type: none;
   margin: auto;

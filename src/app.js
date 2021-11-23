@@ -56,6 +56,8 @@ function convertToFarenheit(event) {
   event.preventDefault();
   celcius.classList.remove("active");
   farenheit.classList.add("active");
+  celcius.classList.add("notActive");
+  farenheit.classList.remove("notActive");
   let temperatureElement = document.querySelector("#temp");
   let farenheitTemp = Math.round((`${celciusTemperature}` * 9) / 5 + 32);
   temperatureElement.innerHTML = `${farenheitTemp}`;
@@ -68,6 +70,8 @@ function convertToCelcius(event) {
   event.preventDefault();
   farenheit.classList.remove("active");
   celcius.classList.add("active");
+  farenheit.classList.add("notActive");
+  celcius.classList.remove("notActive");
   let temperatureElement = document.querySelector("#temp");
   let celciusTemp = Math.round(((`${farenheitTemperature}` - 32) * 5) / 9);
   temperatureElement.innerHTML = `${celciusTemp}`;
