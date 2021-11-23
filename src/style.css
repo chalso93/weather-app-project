@@ -106,16 +106,10 @@
   top: -35px;
 }
 
-#unitCel,
-#unitFar {
-  color: #ff6f00;
-  text-decoration: none;
-}
-
-#unitCel:hover,
-#unitFar:hover {
+.weatherdata .active {
   color: #fff;
-  text-decoration: underline;
+  text-decoration: none;
+  cursor: default;
 }
 
 ul {

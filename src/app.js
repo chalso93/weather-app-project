@@ -54,10 +54,10 @@ let searchLocation = document.querySelector("#location");
 //Convert temperature
 function convertToFarenheit(event) {
   event.preventDefault();
+  celcius.classList.remove("active");
+  farenheit.classList.add("active");
   let temperatureElement = document.querySelector("#temp");
-  let farenheitTemp = Math.round(
-    (`${temperatureElement.innerHTML}` * 9) / 5 + 32
-  );
+  let farenheitTemp = Math.round((`${celciusTemperature}` * 9) / 5 + 32);
   temperatureElement.innerHTML = `${farenheitTemp}`;
 }
 
@@ -66,19 +66,23 @@ farenheit.addEventListener("click", convertToFarenheit);
 
 function convertToCelcius(event) {
   event.preventDefault();
+  farenheit.classList.remove("active");
+  celcius.classList.add("active");
   let temperatureElement = document.querySelector("#temp");
-  let celciusTemp = Math.round(
-    ((`${temperatureElement.innerHTML}` - 32) * 5) / 9
-  );
+  let celciusTemp = Math.round(((`${farenheitTemperature}` - 32) * 5) / 9);
   temperatureElement.innerHTML = `${celciusTemp}`;
 }
 
+let farenheitTemperature = "null";
+let celciusTemperature = "null";
 let celcius = document.querySelector("#unitCel");
 celcius.addEventListener("click", convertToCelcius);
 
 //Show temperature
 function showTemp(response) {
   console.log(response.data);
+  celciusTemperature = response.data.main.temp;
+  farenheitTemperature = (`${celciusTemperature}` * 9) / 5 + 32;
   let temperature = Math.round(response.data.main.temp);
   let minTemperature = Math.round(response.data.main.temp_min);
   let maxTemperature = Math.round(response.data.main.temp_max);
