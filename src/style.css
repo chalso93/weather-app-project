@@ -1,4 +1,4 @@
-img {
+.bground-image {
   position: absolute;
   margin: -40px auto;
   opacity: 0.8;
@@ -94,7 +94,6 @@ img {
 
 .weatherdata {
   text-align: center;
-
   margin: -190px auto;
 }
 
