@@ -13,7 +13,7 @@ function formatDate(timestamp) {
   return `${day} ${hours}:${minutes}`;
 }
 
-let daysShort = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+let daysShort = ["Sun", "Mon", "Tue", "Wed", "Thu"];
 
 let daysFull = [
   "Sunday",
@@ -169,55 +169,20 @@ function getPosition() {
 let gpsLocation = document.querySelector("#current-location-btn");
 gpsLocation.addEventListener("click", getPosition);
 
-displayForecast();
-
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-  forecastHTML =
-    forecastHTML +
-    `<div class="card" style="width: 18rem;">
+  daysShort.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="card" style="width: 18rem;">
               <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Sun</h5>
+                <h5 class="card-title"><i class="fas fa-cloud-sun"></i> ${day}</h5>
                 <h6 class="card-subtitle mb-2 text-muted"><span id = "forecastMax">27°</span><span id = forecastMin> | 23°</span></h6>
               </div>
             </div>         
           </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Sun</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><span id = "forecastMax">27°</span><span id = forecastMin> | 23°</span></h6>
-              </div>
-            </div>         
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Sun</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><span id = "forecastMax">27°</span><span id = forecastMin> | 23°</span></h6>
-              </div>
-            </div>         
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Sun</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><span id = "forecastMax">27°</span><span id = forecastMin> | 23°</span></h6>
-              </div>
-            </div>         
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="card" style="width: 18rem;">
-              <div class="card-body">
-                <h5 class="card-title"><i class="fas fa-cloud-sun"></i> Sun</h5>
-                <h6 class="card-subtitle mb-2 text-muted"><span id = "forecastMax">27°</span><span id = forecastMin> | 23°</span></h6>
-              </div>
-            </div>         
-          </div>`;
+  });
   forecastElement.innerHTML = forecastHTML;
 }
+displayForecast();

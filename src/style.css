@@ -25,16 +25,15 @@
   margin: 0 auto;
   border-bottom-style: solid;
   border-bottom-width: 0.5px;
-  padding: 10px;
-  padding-bottom: 10px;
   color: #eceff1;
+  padding-bottom: 10px;
 }
 
 .search {
   padding-left: 250px;
   padding-bottom: 30px;
   border-bottom-style: solid;
-  color: #878787;
+  color: #eceff1;
   border-bottom-width: 0.5px;
 }
 .search-input:hover {
