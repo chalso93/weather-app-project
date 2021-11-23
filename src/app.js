@@ -110,7 +110,7 @@ function showTemp(response) {
   tempDescription.innerHTML = response.data.weather[0].description;
   minTemp.innerHTML = Math.round(`${minTemperature}`);
   maxTemp.innerHTML = Math.round(`${maxTemperature}`);
-  let windData = Math.round(response.data.wind.speed);
+  let windData = Math.round(response.data.wind.speed * 3.6);
   windkmh.innerHTML = `${windData} km/h`;
   let converttomph = Math.round(`${windData}` / 1.609);
   windmph.innerHTML = `${converttomph} mph`;
