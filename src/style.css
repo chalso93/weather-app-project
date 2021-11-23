@@ -109,11 +109,13 @@
 #unitCel,
 #unitFar {
   color: #ff6f00;
+  text-decoration: none;
 }
 
 #unitCel:hover,
 #unitFar:hover {
   color: #fff;
+  text-decoration: underline;
 }
 
 ul {
