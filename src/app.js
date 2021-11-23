@@ -1,4 +1,19 @@
 //Update to current date
+
+function formatDate(timestamp) {
+  let dateTimestamp = new Date(timestamp);
+  let hours = dateTimestamp.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = dateTimestamp.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  let day = daysFull[dateTimestamp.getDay()];
+  return `${day} ${hours}:${minutes}`;
+}
+
 let daysFull = [
   "Sunday",
   "Monday",
@@ -27,22 +42,10 @@ let monthsFull = [
 let now = new Date();
 let date = [now.getDate()];
 let monthFull = monthsFull[now.getMonth()];
-let dayFull = daysFull[now.getDay()];
-let hours = [now.getHours()];
-if (hours < 10) {
-  hours = `0${hours}`;
-}
-let minutes = [now.getMinutes()];
-if (minutes < 10) {
-  minutes = `0${minutes}`;
-}
-let time = now.toLocaleTimeString();
 let todayDate = document.querySelector("h1.date");
 todayDate.innerHTML = `${date}`;
 let month = document.querySelector("h2.month");
 month.innerHTML = `${monthFull}`;
-let day = document.querySelector("h3.day");
-day.innerHTML = `${dayFull} ${hours}:${minutes}`;
 
 let apiKey = "a3884259e65dd8019ea13ff5e3dffbcf";
 let input = document.querySelector("#search-input");
@@ -89,6 +92,8 @@ function showTemp(response) {
   windmph.innerHTML = `${converttomph} mph`;
   let humidityData = response.data.main.humidity;
   humidity.innerHTML = `${humidityData}%`;
+  let day = document.querySelector("h3.day");
+  day.innerHTML = formatDate(response.data.dt * 1000);
 }
 let temperatureElement = document.querySelector("#temp");
 let degree = `°`;
