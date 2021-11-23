@@ -1,5 +1,4 @@
 //Update to current date
-
 function formatDate(timestamp) {
   let dateTimestamp = new Date(timestamp);
   let hours = dateTimestamp.getHours();
@@ -46,6 +45,9 @@ let todayDate = document.querySelector("h1.date");
 todayDate.innerHTML = `${date}`;
 let month = document.querySelector("h2.month");
 month.innerHTML = `${monthFull}`;
+let dayFull = daysFull[now.getDay()];
+let day = document.querySelector("h3.day");
+day.innerHTML = `${dayFull}`;
 
 let apiKey = "a3884259e65dd8019ea13ff5e3dffbcf";
 let input = document.querySelector("#search-input");
@@ -58,9 +60,12 @@ function convertToFarenheit(event) {
   farenheit.classList.add("active");
   celcius.classList.add("notActive");
   farenheit.classList.remove("notActive");
-  let temperatureElement = document.querySelector("#temp");
   let farenheitTemp = Math.round((`${celciusTemperature}` * 9) / 5 + 32);
   temperatureElement.innerHTML = `${farenheitTemp}`;
+  let minFarTemp = Math.round((`${minCelcius}` * 9) / 5 + 32);
+  let maxFarTemp = Math.round((`${maxCelcius}` * 9) / 5 + 32);
+  minTemp.innerHTML = `${minFarTemp}`;
+  maxTemp.innerHTML = `${maxFarTemp}`;
 }
 
 let farenheit = document.querySelector("#unitFar");
@@ -72,13 +77,20 @@ function convertToCelcius(event) {
   celcius.classList.add("active");
   farenheit.classList.add("notActive");
   celcius.classList.remove("notActive");
-  let temperatureElement = document.querySelector("#temp");
   let celciusTemp = Math.round(((`${farenheitTemperature}` - 32) * 5) / 9);
   temperatureElement.innerHTML = `${celciusTemp}`;
+  let minCelTemp = Math.round(((`${minFarenheit}` - 32) * 5) / 9);
+  let maxCelTemp = Math.round(((`${maxFarenheit}` - 32) * 5) / 9);
+  minTemp.innerHTML = `${minCelTemp}`;
+  maxTemp.innerHTML = `${maxCelTemp}`;
 }
 
 let farenheitTemperature = "null";
 let celciusTemperature = "null";
+let minFarenheit = "null";
+let maxFarenheit = "null";
+let minCelcius = "null";
+let maxCelcius = "null";
 let celcius = document.querySelector("#unitCel");
 celcius.addEventListener("click", convertToCelcius);
 
@@ -88,12 +100,16 @@ function showTemp(response) {
   celciusTemperature = response.data.main.temp;
   farenheitTemperature = (`${celciusTemperature}` * 9) / 5 + 32;
   let temperature = Math.round(response.data.main.temp);
+  minCelcius = response.data.main.temp_min;
+  maxCelcius = response.data.main.temp_max;
+  minFarenheit = (`${minCelcius}` * 9) / 5 + 32;
+  maxFarenheit = (`${maxCelcius}` * 9) / 5 + 32;
   let minTemperature = Math.round(response.data.main.temp_min);
   let maxTemperature = Math.round(response.data.main.temp_max);
   temperatureElement.innerHTML = `${temperature}`;
   tempDescription.innerHTML = response.data.weather[0].description;
-  minTemp.innerHTML = `${minTemperature}°`;
-  maxTemp.innerHTML = `${maxTemperature}°`;
+  minTemp.innerHTML = Math.round(`${minTemperature}`);
+  maxTemp.innerHTML = Math.round(`${maxTemperature}`);
   let windData = Math.round(response.data.wind.speed);
   windkmh.innerHTML = `${windData} km/h`;
   let converttomph = Math.round(`${windData}` / 1.609);
@@ -116,8 +132,6 @@ let maxTemp = document.querySelector("#max-temp");
 let tempDescription = document.querySelector("#temp-description");
 let windkmh = document.querySelector("#wind-kmh");
 let windmph = document.querySelector("#wind-mph");
-let windKm = `km/h`;
-let windMiles = `mph`;
 let humidity = document.querySelector("#humidity-description");
 
 //Search location
