@@ -23,13 +23,14 @@
       <div class="container">   
         <div class="weather">
           <div class="weatherSearch">
-            <form class="search">
+            <form class="search" id = "search-form">
               <div class="row">
                 <div class="col-5">
                   <input
                     type="search"
                     placeholder="Enter a city..."
                     class="form-control search-input"
+                    id = "search-input"
                   />
                 </div>
                 <div class="col-2">
@@ -52,8 +53,8 @@
             </form>
           </div>
           <section class="todayDate">
-            <div class="row searchLocation" id="location">
-              <div class="col"><h1>Brisbane</h1></div>
+            <div class="row searchLocation">
+              <div class="col"><h1 class = "locationHeading" id="location">Brisbane</h1></div>
             </div>
           <div class="row">
             <div class="col-1">
@@ -67,14 +68,16 @@
           <main class = "weatherdata"> 
             <p id = "temp" class="temp">32</p><span class="units"><a id="unitCel" href="#">°C</a> | <a id="unitFar" href="#">°F</a></span>     
             <ul class = "data">
-              <li class="mintemp">22° <span class = "min">min</span></li>
+              <li class="min-maxTemp" id = "min-temp">22°</li>
+              <li class="min-maxTemp min">min</li>
               <li class="weathericon"><i class="fas fa-cloud-rain"></i></li>
-              <li class="maxtemp">28° <span class = "max">max</span></li>
+              <li class="min-maxTemp" id= "max-temp">28°</li>
+              <li class="min-maxTemp max">max</li>
             </ul>
             <ul class="datalist">
               <li id = "temp-description" class = temperatureDescription>clear sky</li>
-              <li>Wind: 1km/h</li>
-              <li>Humidity: 90%</li>
+              <li>Wind: <span class = "windHumidity" id = "wind-kmh">1km/h</span>  |  <span class = "windHumidity" id = "wind-mph">mph</span></li>
+              <li>Humidity: <span class = "windHumidity"id = "humidity-description">90%</span></li>
             </ul>
           </main>
           <div class = "forecasts">
@@ -121,7 +124,7 @@
           >
           | Hosted on <a class = "codedetaillink" href="https://www.netlify.com/">Netlify</a></span>
         </footer>
-    </div>    
+    </div>  
     <script src="src/app.js"></script>
   </body>
 </html>
