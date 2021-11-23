@@ -94,6 +94,12 @@ function showTemp(response) {
   humidity.innerHTML = `${humidityData}%`;
   let day = document.querySelector("h3.day");
   day.innerHTML = formatDate(response.data.dt * 1000);
+  let iconElement = document.querySelector("#icon");
+  iconElement.setAttribute(
+    "src",
+    `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 let temperatureElement = document.querySelector("#temp");
 let degree = `°`;

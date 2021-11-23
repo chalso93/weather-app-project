@@ -13,10 +13,11 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <script src="https://kit.fontawesome.com/b54807b683.js" crossorigin="anonymous"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <title>Weather Application</title>
-    <link rel="stylesheet" href="src/style.css" />
+    <title>Desktop Application</title>
+    <link rel="stylesheet" href="src/style-desktop.css" />
   </head>
   <body>
     <img src = "img/weather-app-bground.jpg" class="bground-image" style="width:100%">
@@ -71,7 +72,12 @@
             <ul class = "data">
               <li class="min-maxTemp" id = "min-temp">22°</li>
               <li class="min-maxTemp min">min</li>
-              <li class="weathericon"><i class="fas fa-cloud-rain"></i></li>
+              <li class="weathericon">
+                <img src = "https://openweathermap.org/img/wn/04n@2x.png"
+                      id = "icon"
+                      alt = "broken clouds"
+                />
+              </li>
               <li class="min-maxTemp" id= "max-temp">28°</li>
               <li class="min-maxTemp max">max</li>
             </ul>
@@ -125,7 +131,7 @@
           >
           | Hosted on <a class = "codedetaillink" href="https://www.netlify.com/">Netlify</a></span>
         </footer>
-    </div>  
-    <script src="src/app.js"></script>
+    </div>    
+    <script src="src/app-desktop.js"></script>
   </body>
 </html>
