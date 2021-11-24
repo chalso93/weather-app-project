@@ -111,9 +111,9 @@ function showTemp(response) {
   minTemp.innerHTML = Math.round(`${minTemperature}`);
   maxTemp.innerHTML = Math.round(`${maxTemperature}`);
   let windData = Math.round(response.data.wind.speed * 3.6);
-  windkmh.innerHTML = `${windData} km/h`;
+  windkmh.innerHTML = `${windData} `;
   let converttomph = Math.round(`${windData}` / 1.609);
-  windmph.innerHTML = `${converttomph} mph`;
+  windmph.innerHTML = `${converttomph} `;
   let humidityData = response.data.main.humidity;
   humidity.innerHTML = `${humidityData}%`;
   let day = document.querySelector("h3.day");
