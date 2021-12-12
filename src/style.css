@@ -62,6 +62,10 @@
 
 .locationHeading {
   font-size: 32px;
+  text-transform: lowercase;
+}
+
+.locationHeading::first-line {
   text-transform: capitalize;
 }
 

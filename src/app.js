@@ -158,6 +158,35 @@ function showTemp(response) {
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
   iconElement.setAttribute("alt", response.data.weather[0].description);
+
+  let backgroundImage = document.querySelector("#background-image");
+  if (response.data.weather[0].main === "Snow") {
+    backgroundImage.setAttribute("src", `img/snow.jpg`);
+  } else if (response.data.weather[0].main === "Thunderstorm") {
+    backgroundImage.setAttribute("src", `img/thunderstorm.jpg`);
+  } else if (
+    response.data.weather[0].main === "Mist" ||
+    response.data.weather[0].main === "Smoke" ||
+    response.data.weather[0].main === "Haze" ||
+    response.data.weather[0].main === "Dust" ||
+    response.data.weather[0].main === "Fog" ||
+    response.data.weather[0].main === "Sand" ||
+    response.data.weather[0].main === "Ash"
+  ) {
+    backgroundImage.setAttribute("src", `img/mist.jpg`);
+  } else if (
+    response.data.weather[0].main === "Drizzle" ||
+    response.data.weather[0].main === "Rain"
+  ) {
+    backgroundImage.setAttribute("src", `img/rain-clouds.jpg`);
+  } else if (
+    response.data.weather[0].main === "Clear" ||
+    response.data.weather[0].main === "Clouds"
+  ) {
+    backgroundImage.setAttribute("src", `img/sun-clouds.jpg`);
+  } else {
+    backgroundImage.setAttribute("src", `img/other.jpg`);
+  }
   getForecast(response.data.coord);
 }
 
