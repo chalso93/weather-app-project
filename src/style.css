@@ -61,17 +61,21 @@
 }
 
 .locationHeading {
-  padding-bottom: 5px;
   font-size: 32px;
+}
+
+.updated {
+  font-style: italic;
+  padding-top: 5px;
+  margin-bottom: -19px;
 }
 
 .todayDate {
   padding-left: 40px;
-  padding-top: 20px;
+  padding-top: 5px;
 }
 
 .monthDay {
-  padding-left: 20px;
   margin-top: 25px;
 }
 
@@ -83,13 +87,17 @@
 
 .date {
   font-size: 80px;
+  position: relative;
+  align-items: center;
 }
 
 .month {
   font-size: 25px;
+  position: relative;
 }
 .day {
   font-size: 20px;
+  position: relative;
 }
 
 .weatherdata {
@@ -155,9 +163,6 @@ ul {
   color: #ff6f00;
   font-weight: bold;
 }
-.windunit {
-  color: #ff6f00;
-}
 
 .forecasts {
   margin-top: 210px;
@@ -174,12 +179,14 @@ h6 {
   padding-top: 10px;
 }
 
-#forecastMax {
+#forecastMax,
+.maxdegree {
   font-size: 18px;
   font-weight: bold;
 }
 
-#forecastMin {
+#forecastMin,
+.mindegree {
   font-size: 16px;
   opacity: 0.8;
 }
