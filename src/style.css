@@ -33,12 +33,11 @@
   padding-left: 250px;
   padding-bottom: 30px;
   border-bottom-style: solid;
-  color: #eceff1;
   border-bottom-width: 0.5px;
 }
 .search-input:hover {
   background: #cfd8dc;
-  color: #31434d;
+  color: #ff6f00;
   border-color: #31434d;
   border-width: 1px;
 }
@@ -167,6 +166,7 @@ ul {
 .windHumidity {
   color: #ff6f00;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .forecasts {
@@ -204,5 +204,5 @@ h6 {
 
 .codedetaillink:hover {
   font-weight: bold;
-  color: #78909c;
+  color: #ff6f00;
 }
