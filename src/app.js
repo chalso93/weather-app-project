@@ -188,7 +188,6 @@ function showTemp(response) {
     backgroundImage.setAttribute("src", `img/other.jpg`);
   }
   getForecast(response.data.coord);
-  console.log(response.data);
 }
 
 //Forecast
