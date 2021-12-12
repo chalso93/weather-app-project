@@ -179,7 +179,8 @@ function displayForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt=""
-          width="42"
+          width="60"
+          height="60"
         /> ${formatForecastDay(forecastDay.dt)}</h5>
                 <h6 class="card-subtitle mb-2 text-muted" id="forecastTemps"><span id = "forecastMax">${Math.round(
                   maxForecastCelcius
@@ -249,7 +250,8 @@ function convertFarForecast(response) {
             forecastDay.weather[0].icon
           }@2x.png"
           alt=""
-          width="42"
+          width="60"
+          height="60"
         /> ${formatForecastDay(forecastDay.dt)}</h5>
                 <h6 class="card-subtitle mb-2 text-muted" id="forecastTemps"><span id = "forecastMax">${Math.round(
                   maxForecastFar
