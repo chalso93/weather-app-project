@@ -77,7 +77,15 @@ let celcius = document.querySelector("#unitCel");
 function locationSubmit(event) {
   event.preventDefault();
   let locationUrl = `https://api.openweathermap.org/data/2.5/weather?q=${input.value}&units=metric&appid=${apiKey}`;
-  axios.get(`${locationUrl}`).then(showTemp);
+  axios
+    .get(locationUrl)
+    .then(showTemp)
+    .catch(function error() {
+      if (error) {
+        searchLocation.innerHTML = `city not found`;
+        alert("city not found");
+      }
+    });
   searchLocation.innerHTML = `${input.value}`;
 }
 
